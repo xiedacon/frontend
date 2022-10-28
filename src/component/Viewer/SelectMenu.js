@@ -33,7 +33,7 @@ export default function SelectMenu({
             onClose={handleClose}
         >
             {options.map((item) => (
-                <>
+                <div key={item.name}>
                     <MenuItem
                         style={{ whiteSpace: "normal" }}
                         dense
@@ -51,7 +51,7 @@ export default function SelectMenu({
 
                         {item.name}
                     </MenuItem>
-                </>
+                </div>
             ))}
         </Menu>
     );

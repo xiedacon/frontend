@@ -18,9 +18,9 @@ import MusicIcon from "@material-ui/icons/LibraryMusicOutlined";
 import DocIcon from "@material-ui/icons/FileCopyOutlined";
 import { useHistory, useLocation } from "react-router";
 import pathHelper from "../../utils/page";
-import MuiExpansionPanel from "@material-ui/core/ExpansionPanel";
-import MuiExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import MuiExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import MuiExpansionPanel from "@material-ui/core/Accordion";
+import MuiExpansionPanelSummary from "@material-ui/core/AccordionSummary";
+import MuiExpansionPanelDetails from "@material-ui/core/AccordionDetails";
 import { useDispatch } from "react-redux";
 import Auth from "../../middleware/Auth";
 import {
@@ -167,7 +167,7 @@ export default function FileTag() {
             const IconComponent = icons[icon];
             return (
                 <IconComponent
-                    className={[classes.iconFix]}
+                    className={classes.iconFix}
                     style={
                         color
                             ? {
@@ -178,7 +178,7 @@ export default function FileTag() {
                 />
             );
         }
-        return <Circle className={[classes.iconFix]} />;
+        return <Circle className={classes.iconFix} />;
     };
 
     const submitSuccess = (tag) => {
@@ -278,10 +278,7 @@ export default function FileTag() {
                                 id: "video",
                                 icon: (
                                     <VideoIcon
-                                        className={[
-                                            classes.iconFix,
-                                            classes.iconVideo,
-                                        ]}
+                                        className={classNames(classes.iconFix, classes.iconVideo)}
                                     />
                                 ),
                             },
@@ -290,10 +287,7 @@ export default function FileTag() {
                                 id: "image",
                                 icon: (
                                     <ImageIcon
-                                        className={[
-                                            classes.iconFix,
-                                            classes.iconImg,
-                                        ]}
+                                        className={classNames(classes.iconFix, classes.iconImg)}
                                     />
                                 ),
                             },
@@ -302,10 +296,7 @@ export default function FileTag() {
                                 id: "audio",
                                 icon: (
                                     <MusicIcon
-                                        className={[
-                                            classes.iconFix,
-                                            classes.iconAudio,
-                                        ]}
+                                        className={classNames(classes.iconFix, classes.iconAudio)}
                                     />
                                 ),
                             },
@@ -314,10 +305,7 @@ export default function FileTag() {
                                 id: "doc",
                                 icon: (
                                     <DocIcon
-                                        className={[
-                                            classes.iconFix,
-                                            classes.iconDoc,
-                                        ]}
+                                        className={classNames(classes.iconFix, classes.iconDoc)}
                                     />
                                 ),
                             },

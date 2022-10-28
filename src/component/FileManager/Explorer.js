@@ -228,7 +228,7 @@ export default function Explorer({ share }) {
                                     sortMethod === "nameRev"
                                 }
                                 direction={
-                                    sortMethod === "namePos" ? "asc" : "des"
+                                    sortMethod === "namePos" ? "asc" : "desc"
                                 }
                                 onClick={() => {
                                     ChangeSortMethod(
@@ -256,7 +256,7 @@ export default function Explorer({ share }) {
                                     sortMethod === "sizeRes"
                                 }
                                 direction={
-                                    sortMethod === "sizePos" ? "asc" : "des"
+                                    sortMethod === "sizePos" ? "asc" : "desc"
                                 }
                                 onClick={() => {
                                     ChangeSortMethod(
@@ -286,7 +286,7 @@ export default function Explorer({ share }) {
                                 direction={
                                     sortMethod === "modifyTimePos"
                                         ? "asc"
-                                        : "des"
+                                        : "desc"
                                 }
                                 onClick={() => {
                                     ChangeSortMethod(
@@ -344,14 +344,14 @@ export default function Explorer({ share }) {
                 {dirList.length !== 0 && (
                     <>
                         <Typography
-                            data-clickAway={"true"}
+                            data-clickaway={"true"}
                             variant="body2"
                             className={classes.typeHeader}
                         >
                             {t("folders")}
                         </Typography>
                         <Grid
-                            data-clickAway={"true"}
+                            data-clickaway={"true"}
                             container
                             spacing={0}
                             alignItems="flex-start"
@@ -376,14 +376,14 @@ export default function Explorer({ share }) {
                 {fileList.length !== 0 && (
                     <>
                         <Typography
-                            data-clickAway={"true"}
+                            data-clickaway={"true"}
                             variant="body2"
                             className={classes.typeHeader}
                         >
                             {t("files")}
                         </Typography>
                         <Grid
-                            data-clickAway={"true"}
+                            data-clickaway={"true"}
                             container
                             spacing={0}
                             alignItems="flex-start"

@@ -23,9 +23,9 @@ import { useDispatch } from "react-redux";
 import Link from "@material-ui/core/Link";
 import PlayArrow from "@material-ui/icons/PlayArrow";
 import withStyles from "@material-ui/core/styles/withStyles";
-import MuiExpansionPanel from "@material-ui/core/ExpansionPanel";
-import MuiExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import MuiExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import MuiExpansionPanel from "@material-ui/core/Accordion";
+import MuiExpansionPanelSummary from "@material-ui/core/AccordionSummary";
+import MuiExpansionPanelDetails from "@material-ui/core/AccordionDetails";
 import TaskDetail from "./TaskDetail";
 import { SelectType } from "../core";
 import { navigateTo } from "../../../redux/explorer";
@@ -190,32 +190,32 @@ export default function UploadTask({
             case Status.added:
             case Status.initialized:
             case Status.queued:
-                return <div>{t("pendingInQueue")}</div>;
+                return <span>{t("pendingInQueue")}</span>;
             case Status.preparing:
-                return <div>{t("preparing")}</div>;
+                return <span>{t("preparing")}</span>;
             case Status.error:
                 return (
-                    <div className={classes.errorStatus}>
+                    <span className={classes.errorStatus}>
                         {getErrMsg(error)}
                         <br />
-                    </div>
+                    </span>
                 );
             case Status.finishing:
-                return <div>{t("processing")}</div>;
+                return <span>{t("processing")}</span>;
             case Status.resumable:
                 return (
-                    <div>
+                    <span>
                         {t("progressDescription", {
                             uploaded: sizeToString(progress.total.loaded),
                             total: sizeToString(progress.total.size),
                             percentage: progress.total.percent.toFixed(2),
                         })}
-                    </div>
+                    </span>
                 );
             case Status.processing:
                 if (progress) {
                     return (
-                        <div>
+                        <span>
                             {t("progressDescriptionFull", {
                                 speed: getSpeedText(
                                     speed,
@@ -226,28 +226,27 @@ export default function UploadTask({
                                 total: sizeToString(progress.total.size),
                                 percentage: progress.total.percent.toFixed(2),
                             })}
-                        </div>
+                        </span>
                     );
                 }
-                return <div>{t("progressDescriptionPlaceHolder")}</div>;
+                return <span>{t("progressDescriptionPlaceHolder")}</span>;
             case Status.finished:
                 return (
-                    <div className={classes.successStatus}>
+                    <span className={classes.successStatus}>
                         {t("uploadedTo")}
                         <Tooltip title={uploader.task.dst}>
                             <Link
                                 className={classes.dstLink}
-                                href={"javascript:void"}
                                 onClick={() => navigateToDst(uploader.task.dst)}
                             >
                                 {parent === "" ? t("rootFolder") : parent}
                             </Link>
                         </Tooltip>
                         <br />
-                    </div>
+                    </span>
                 );
             default:
-                return <div>{t("unknownStatus")}</div>;
+                return <span>{t("unknownStatus")}</span>;
         }
     }, [status, error, progress, speed, speedAvg, useAvgSpeed]);
 
@@ -349,30 +348,28 @@ export default function UploadTask({
                 icon: <PlayArrow />,
                 loading: false,
             },
-        ];
+        ].filter(a => a.show);
 
         return (
             <>
                 {actions.map((a) => (
-                    <>
-                        {a.show && (
-                            <Grow in={a.show}>
-                                <Tooltip title={a.title}>
-                                    <IconButton
-                                        onMouseDown={stopRipple}
-                                        onTouchStart={stopRipple}
-                                        disabled={a.loading}
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            a.click();
-                                        }}
-                                    >
-                                        {a.icon}
-                                    </IconButton>
-                                </Tooltip>
-                            </Grow>
-                        )}
-                    </>
+                    <div key={a.title}>
+                        <Grow in={a.show}>
+                            <Tooltip title={a.title}>
+                                <IconButton
+                                    onMouseDown={stopRipple}
+                                    onTouchStart={stopRipple}
+                                    disabled={a.loading}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        a.click();
+                                    }}
+                                >
+                                    {a.icon}
+                                </IconButton>
+                            </Tooltip>
+                        </Grow>
+                    </div>
                 ))}
             </>
         );
@@ -402,18 +399,18 @@ export default function UploadTask({
                             <ListItemText
                                 className={classes.listAction}
                                 primary={
-                                    <div className={classes.fileNameContainer}>
-                                        <div className={classes.wordBreak}>
+                                    <span className={classes.fileNameContainer}>
+                                        <span className={classes.wordBreak}>
                                             {uploader.task.name}
-                                        </div>
-                                        <div>{resumeLabel}</div>
-                                        <div>{continueLabel}</div>
-                                    </div>
+                                        </span>
+                                        <span>{resumeLabel}</span>
+                                        <span>{continueLabel}</span>
+                                    </span>
                                 }
                                 secondary={
-                                    <div className={classes.wordBreak}>
+                                    <span className={classes.wordBreak}>
                                         {statusText}
-                                    </div>
+                                    </span>
                                 }
                             />
                             {secondaryAction}

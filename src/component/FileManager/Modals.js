@@ -549,7 +549,7 @@ class ModalsCompoment extends Component {
                 <Loading />
                 <OptionSelector />
                 <Dialog
-                    open={this.props.modalsStatus.getSource}
+                    open={this.props.modalsStatus.getSource === "true" ? true : false}
                     onClose={this.onClose}
                     aria-labelledby="form-dialog-title"
                     fullWidth

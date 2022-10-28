@@ -156,7 +156,7 @@ class TableRowCompoment extends Component {
                             [classes.folderNameNotSelected]: !isSelected,
                         })}
                     >
-                        <div
+                        <span
                             onClick={
                                 this.props.file.type !== "up"
                                     ? this.props.onIconClick
@@ -174,7 +174,7 @@ class TableRowCompoment extends Component {
                                     />
                                 </Grow>
                             )}
-                        </div>
+                        </span>
                         <FileName name={this.props.file.name} />
                     </Typography>
                 </TableCell>

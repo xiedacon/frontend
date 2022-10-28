@@ -182,7 +182,7 @@ export default function SearchResult() {
                     </FormControl>
                 </Grid>
             </Grid>
-            <Grid container spacing={24} className={classes.gird}>
+            <Grid container spacing={2} className={classes.gird}>
                 {shareList.length === 0 && <Nothing primary={t("noRecords")} />}
                 {shareList.map((value) => (
                     <Grid

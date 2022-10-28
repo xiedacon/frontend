@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import classNames from "classnames";
 import API from "../../middleware/Api";
 
 import {
@@ -228,7 +229,7 @@ class ProfileCompoment extends Component {
                         </Tabs>
                         {this.state.listType === 2 && (
                             <div className={classes.infoContainer}>
-                                <Grid container spacing={24}>
+                                <Grid container spacing={2}>
                                     <Grid
                                         item
                                         md={4}
@@ -330,20 +331,14 @@ class ProfileCompoment extends Component {
                                                     {t("setting.shareDate")}
                                                 </TableCell>
                                                 <TableCell
-                                                    className={[
-                                                        classes.th,
-                                                        classes.mobileHide,
-                                                    ]}
+                                                    className={classNames(classes.th, classes.mobileHide)}
                                                 >
                                                     {t(
                                                         "setting.downloadNumber"
                                                     )}
                                                 </TableCell>
                                                 <TableCell
-                                                    className={[
-                                                        classes.th,
-                                                        classes.mobileHide,
-                                                    ]}
+                                                    className={classNames(classes.th, classes.mobileHide)}
                                                 >
                                                     {t("setting.viewNumber")}
                                                 </TableCell>

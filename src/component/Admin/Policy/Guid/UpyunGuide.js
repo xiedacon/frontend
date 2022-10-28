@@ -453,7 +453,6 @@ export default function UpyunGuide(props) {
                                         <Link
                                             key={0}
                                             color={"secondary"}
-                                            href={"javascript:void()"}
                                             onClick={() => setMagicVar("path")}
                                         />,
                                     ]}
@@ -487,7 +486,6 @@ export default function UpyunGuide(props) {
                                         <Link
                                             key={0}
                                             color={"secondary"}
-                                            href={"javascript:void()"}
                                             onClick={() => setMagicVar("file")}
                                         />,
                                     ]}

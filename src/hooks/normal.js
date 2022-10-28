@@ -65,7 +65,7 @@ const NormalCaptcha = forwardRef(function NormalCaptcha(
                     type="text"
                     id="captcha"
                     value={captcha}
-                    autoComplete
+                    autoComplete="on"
                 />
             </FormControl>{" "}
             <div

@@ -26,14 +26,14 @@ export default function OptionSelector() {
 
     return (
         <Dialog
-            open={option && option.open}
+            open={option && option.open || false}
             onClose={option && option.onClose}
             aria-labelledby="form-dialog-title"
         >
             <DialogTitle id="form-dialog-title">
                 {option && option.title}
             </DialogTitle>
-            <DialogContent dividers={"paper"} className={classes.content}>
+            <DialogContent dividers className={classes.content}>
                 <List component="nav" aria-label="main mailbox folders">
                     {option &&
                         option.options.map((o) => (

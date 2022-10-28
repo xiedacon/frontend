@@ -44,7 +44,6 @@ export default function TaskDetail({ uploader, navigateToDst, error }) {
             name: t("uploader.destination"),
             value: (
                 <Link
-                    href={"javascript:void"}
                     onClick={() => navigateToDst(uploader.task.dst)}
                 >
                     {uploader.task.dst === "/"
@@ -85,22 +84,18 @@ export default function TaskDetail({ uploader, navigateToDst, error }) {
                   value: error,
               }
             : null,
-    ];
+    ].filter(Boolean);
     return (
         <Grid container>
             {items.map((i) => (
-                <>
-                    {i && (
-                        <Grid key={i.name} container xs={12}>
-                            <Grid item xs={3} className={classes.infoTitle}>
-                                {i.name}
-                            </Grid>
-                            <Grid item xs={9} className={classes.infoValue}>
-                                {i.value}
-                            </Grid>
-                        </Grid>
-                    )}
-                </>
+                <Grid key={i.name} container item xs={12}>
+                    <Grid item xs={3} className={classes.infoTitle}>
+                        {i.name}
+                    </Grid>
+                    <Grid item xs={9} className={classes.infoValue}>
+                        {i.value}
+                    </Grid>
+                </Grid>
             ))}
         </Grid>
     );

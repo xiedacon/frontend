@@ -71,7 +71,6 @@ export default function Creator(props) {
                             <Link
                                 key={0}
                                 onClick={() => userProfile()}
-                                href={"javascript:void(0)"}
                                 color="inherit"
                             />,
                         ]}
@@ -88,7 +87,6 @@ export default function Creator(props) {
                             <Link
                                 key={0}
                                 onClick={() => userProfile()}
-                                href={"javascript:void(0)"}
                                 color="inherit"
                             />,
                         ]}

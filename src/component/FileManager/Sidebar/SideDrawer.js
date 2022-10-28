@@ -174,7 +174,6 @@ export default function SideDrawer() {
                 return (
                     <Tooltip title={path}>
                         <Link
-                            href={"javascript:void"}
                             onClick={() => NavigateTo(path)}
                         >
                             {name === "" ? t("fileManager.rootFolder") : name}

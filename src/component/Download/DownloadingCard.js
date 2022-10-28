@@ -12,9 +12,9 @@ import {
 import Badge from "@material-ui/core/Badge";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
-import MuiExpansionPanel from "@material-ui/core/ExpansionPanel";
-import MuiExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import MuiExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import MuiExpansionPanel from "@material-ui/core/Accordion";
+import MuiExpansionPanelDetails from "@material-ui/core/AccordionDetails";
+import MuiExpansionPanelSummary from "@material-ui/core/AccordionSummary";
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Table from "@material-ui/core/Table";

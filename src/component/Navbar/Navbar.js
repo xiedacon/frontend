@@ -652,14 +652,14 @@ class NavbarCompoment extends Component {
                                             this.props.selected[0].name
                                         ) && (
                                             <Grow
-                                                in={
+                                                in={Boolean(
                                                     !this.props.isMultiple &&
                                                     this.props.withFile &&
                                                     isPreviewable(
                                                         this.props.selected[0]
                                                             .name
                                                     )
-                                                }
+                                                )}
                                             >
                                                 <Tooltip
                                                     title={t(
@@ -748,7 +748,6 @@ class NavbarCompoment extends Component {
                                             >
                                                 <IconButton
                                                     color="inherit"
-                                                    disableClickAway
                                                     onClick={() =>
                                                         this.archiveDownload()
                                                     }

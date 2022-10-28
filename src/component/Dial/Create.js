@@ -131,7 +131,7 @@ export default function UploadButton(props) {
                 <Backdrop open={open && statusHelper.isMobile()} />
                 <SpeedDial
                     hidden={false}
-                    tooltipTitle={t("uploadFiles")}
+                    tooltiptitle={t("uploadFiles")}
                     icon={
                         <SpeedDialIcon
                             openIcon={
@@ -154,7 +154,7 @@ export default function UploadButton(props) {
                             key="UploadFile"
                             icon={<PublishIcon />}
                             tooltipOpen
-                            tooltipTitle={t("uploadFiles")}
+                            tooltiptitle={t("uploadFiles")}
                             onClick={() => uploadClicked()}
                             title={t("uploadFiles")}
                         />
@@ -164,7 +164,7 @@ export default function UploadButton(props) {
                             key="UploadFolder"
                             icon={<FolderUpload />}
                             tooltipOpen
-                            tooltipTitle={t("uploadFolder")}
+                            tooltiptitle={t("uploadFolder")}
                             onClick={() =>
                                 props.selectFile(path, SelectType.Directory)
                             }
@@ -175,7 +175,7 @@ export default function UploadButton(props) {
                         key="NewFolder"
                         icon={<CreateNewFolderIcon />}
                         tooltipOpen
-                        tooltipTitle={t("newFolder")}
+                        tooltiptitle={t("newFolder")}
                         onClick={() => OpenNewFolderDialog()}
                         title={t("newFolder")}
                     />
@@ -183,7 +183,7 @@ export default function UploadButton(props) {
                         key="NewFile"
                         icon={<FilePlus />}
                         tooltipOpen
-                        tooltipTitle={t("newFile")}
+                        tooltiptitle={t("newFile")}
                         onClick={() => OpenNewFileDialog()}
                         title={t("newFile")}
                     />

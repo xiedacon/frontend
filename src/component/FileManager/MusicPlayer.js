@@ -365,7 +365,7 @@ class MusicPlayerComponent extends Component {
                         ref={this.myAudioRef}
                         src={items[currentIndex]?.src}
                     />
-                    <div style={{ "padding-top": 8 }} />
+                    <div style={{ paddingTop: 8 }} />
                     <Grid container spacing={2} alignItems="center">
                         <Grid item xs>
                             <Slider
@@ -383,7 +383,7 @@ class MusicPlayerComponent extends Component {
                     <Grid
                         container
                         spacing={2}
-                        justifyContent="center"
+                        justify-content="center"
                         justify="center"
                     >
                         <Grid item>

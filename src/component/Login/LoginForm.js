@@ -126,7 +126,7 @@ function LoginForm() {
     const classes = useStyles();
 
     useEffect(() => {
-        setEmail(query.get("username"));
+        setEmail(query.get("username") || "");
     }, [location]);
 
     const afterLogin = (data) => {
@@ -279,7 +279,7 @@ function LoginForm() {
                                         onChange={(e) =>
                                             setEmail(e.target.value)
                                         }
-                                        autoComplete
+                                        autoComplete="on"
                                         value={email}
                                         autoFocus
                                     />
@@ -294,7 +294,7 @@ function LoginForm() {
                                         type="password"
                                         id="password"
                                         value={pwd}
-                                        autoComplete
+                                        autoComplete="on"
                                     />
                                 </FormControl>
                                 {loginCaptcha && <CaptchaRender />}
@@ -327,7 +327,7 @@ function LoginForm() {
                                         onChange={(e) =>
                                             setEmail(e.target.value)
                                         }
-                                        autoComplete
+                                        autoComplete="on"
                                         value={email}
                                         autoFocus
                                     />
@@ -413,7 +413,7 @@ function LoginForm() {
                                 onChange={(event) =>
                                     setFACode(event.target.value)
                                 }
-                                autoComplete
+                                autoComplete="on"
                                 value={faCode}
                                 autoFocus
                             />

@@ -139,7 +139,7 @@ function Reset() {
                             type="email"
                             name="email"
                             onChange={handleInputChange("email")}
-                            autoComplete
+                            autoComplete="on"
                             value={input.email}
                             autoFocus
                         />

@@ -10,9 +10,9 @@ import {
 import { sizeToString } from "../../utils";
 import PermMediaIcon from "@material-ui/icons/PermMedia";
 import TypeIcon from "../FileManager/TypeIcon";
-import MuiExpansionPanel from "@material-ui/core/ExpansionPanel";
-import MuiExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import MuiExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import MuiExpansionPanel from "@material-ui/core/Accordion";
+import MuiExpansionPanelSummary from "@material-ui/core/AccordionSummary";
+import MuiExpansionPanelDetails from "@material-ui/core/AccordionDetails";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Divider from "@material-ui/core/Divider";
 import { ExpandMore } from "@material-ui/icons";

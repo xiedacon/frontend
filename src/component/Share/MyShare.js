@@ -253,12 +253,12 @@ class MyShareCompoment extends Component {
         return (
             <div className={classes.layout}>
                 <Grid container>
-                    <Grid sm={6} xs={6}>
+                    <Grid item sm={6} xs={6}>
                         <Typography color="textSecondary" variant="h4">
                             {t("share.sharedFiles")}
                         </Typography>
                     </Grid>
-                    <Grid sm={6} xs={6} className={classes.orderSelect}>
+                    <Grid item sm={6} xs={6} className={classes.orderSelect}>
                         <FormControl>
                             <Select
                                 color={"secondary"}
@@ -490,7 +490,6 @@ class MyShareCompoment extends Component {
                     <DialogTitle> {t("share.sharePassword")} </DialogTitle>{" "}
                     <DialogContent>
                         <TextField
-                            id="standard-name"
                             value={this.state.showPwd}
                             margin="normal"
                             autoFocus

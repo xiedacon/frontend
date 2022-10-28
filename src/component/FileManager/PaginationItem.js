@@ -42,9 +42,11 @@ export default function CustomPaginationItem(props) {
         }
         return <></>;
     }
+    const innerProps = {...props};
+    delete innerProps.isMobile;
     return (
         <div ref={inputRef}>
-            <PaginationItem ref={drop} {...props} />
+            <PaginationItem ref={drop} {...innerProps} />
         </div>
     );
 }

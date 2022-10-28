@@ -171,7 +171,7 @@ export default function MoreActions({
         <>
             <Menu id={id} open={open} anchorEl={anchorEl} onClose={onClose}>
                 {listItems.map((item) => (
-                    <>
+                    <div key={item.text}>
                         <Tooltip
                             enterNextDelay={500}
                             key={item.text}
@@ -188,7 +188,7 @@ export default function MoreActions({
                             </MenuItem>
                         </Tooltip>
                         {item.divider && <Divider />}
-                    </>
+                    </div>
                 ))}
             </Menu>
             <ConcurrentOptionDialog

@@ -245,7 +245,6 @@ export default function ObjectIcon(props) {
                 {props.file.type === "file" && viewMethod === "icon" && (
                     <FileIcon
                         onIconClick={handleIconClick}
-                        ref={drag}
                         file={props.file}
                     />
                 )}

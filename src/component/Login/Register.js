@@ -177,7 +177,7 @@ function Register() {
                                     type="email"
                                     name="email"
                                     onChange={handleInputChange("email")}
-                                    autoComplete
+                                    autoComplete="on"
                                     value={input.email}
                                     autoFocus
                                 />
@@ -192,7 +192,7 @@ function Register() {
                                     type="password"
                                     id="password"
                                     value={input.password}
-                                    autoComplete
+                                    autoComplete="on"
                                 />
                             </FormControl>
                             <FormControl margin="normal" required fullWidth>
@@ -207,7 +207,7 @@ function Register() {
                                     type="password"
                                     id="pwdRepeat"
                                     value={input.password_repeat}
-                                    autoComplete
+                                    autoComplete="on"
                                 />
                             </FormControl>
                             {regCaptcha && <CaptchaRender />}

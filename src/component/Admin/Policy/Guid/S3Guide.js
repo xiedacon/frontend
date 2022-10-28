@@ -616,7 +616,6 @@ export default function S3Guide(props) {
                                         <Link
                                             key={0}
                                             color={"secondary"}
-                                            href={"javascript:void()"}
                                             onClick={() => setMagicVar("path")}
                                         />,
                                     ]}
@@ -650,7 +649,6 @@ export default function S3Guide(props) {
                                         <Link
                                             key={0}
                                             color={"secondary"}
-                                            href={"javascript:void()"}
                                             onClick={() => setMagicVar("file")}
                                         />,
                                     ]}

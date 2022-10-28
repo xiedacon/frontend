@@ -206,7 +206,6 @@ export default function WebDAV() {
                                                                 row.Password
                                                             )
                                                         }
-                                                        href={"javascript:void"}
                                                     >
                                                         {t("copy", {
                                                             ns: "common",

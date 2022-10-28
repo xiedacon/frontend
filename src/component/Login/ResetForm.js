@@ -139,7 +139,7 @@ function ResetForm() {
                             type="password"
                             name="pwd"
                             onChange={handleInputChange("password")}
-                            autoComplete
+                            autoComplete="on"
                             value={input.password}
                             autoFocus
                         />
@@ -153,7 +153,7 @@ function ResetForm() {
                             type="password"
                             name="pwdRepeat"
                             onChange={handleInputChange("password_repeat")}
-                            autoComplete
+                            autoComplete="on"
                             value={input.password_repeat}
                             autoFocus
                         />

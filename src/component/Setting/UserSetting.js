@@ -1168,7 +1168,6 @@ class UserSettingCompoment extends Component {
                     <DialogTitle>{t("setting.changeNick")}</DialogTitle>
                     <DialogContent>
                         <TextField
-                            id="standard-name"
                             label={t("setting.nickname")}
                             className={classes.textField}
                             value={this.state.nick}
@@ -1201,7 +1200,6 @@ class UserSettingCompoment extends Component {
                     <DialogContent>
                         <div>
                             <TextField
-                                id="standard-name"
                                 label={t("setting.originalPassword")}
                                 type="password"
                                 className={classes.textField}
@@ -1213,7 +1211,6 @@ class UserSettingCompoment extends Component {
                         </div>
                         <div>
                             <TextField
-                                id="standard-name"
                                 label={t("login.newPassword")}
                                 type="password"
                                 className={classes.textField}
@@ -1224,7 +1221,6 @@ class UserSettingCompoment extends Component {
                         </div>
                         <div>
                             <TextField
-                                id="standard-name"
                                 label={t("login.repeatNewPassword")}
                                 type="password"
                                 className={classes.textField}
@@ -1285,7 +1281,6 @@ class UserSettingCompoment extends Component {
                                     </Typography>
                                 )}
                                 <TextField
-                                    id="standard-name"
                                     label={t("login.input2FACode")}
                                     type="number"
                                     className={classes.textField}
@@ -1362,7 +1357,6 @@ class UserSettingCompoment extends Component {
                     <DialogTitle>{t("setting.webdavServer")}</DialogTitle>
                     <DialogContent>
                         <TextField
-                            id="standard-name"
                             className={classes.textField}
                             value={window.location.origin + "/dav"}
                             margin="normal"
@@ -1382,7 +1376,6 @@ class UserSettingCompoment extends Component {
                     <DialogTitle>{t("setting.userName")}</DialogTitle>
                     <DialogContent>
                         <TextField
-                            id="standard-name"
                             className={classes.textField}
                             value={user.user_name}
                             margin="normal"
