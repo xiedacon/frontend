@@ -78,10 +78,7 @@ class ImagPreviewComponent extends Component {
                         intro: value.name,
                         src: src,
                     };
-                    if (
-                        value.path === nextProps.first.path &&
-                        value.name === nextProps.first.name
-                    ) {
+                    if (value.id === nextProps.first.id) {
                         firstOne = items.length;
                     }
                     items.push(newImg);
