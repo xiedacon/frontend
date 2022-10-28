@@ -70,7 +70,7 @@ export const initState: ViewUpdateState = {
     isLogin: Auth.Check(),
     open: false,
     explorerViewMethod: "icon",
-    sortMethod: Auth.GetPreferenceWithDefault("sort", "timePos"),
+    sortMethod: Auth.GetPreferenceWithDefault("sort", "namePos"),
     subTitle: null,
     contextType: "none",
     contextOpen: false,
