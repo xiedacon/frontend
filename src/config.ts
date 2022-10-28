@@ -1,5 +1,7 @@
 import i18next from "./i18n";
 
+export const listDataRefreshInterval = 3 * 1000;
+
 export const imgPreviewSuffix = [
     "bmp",
     "png",

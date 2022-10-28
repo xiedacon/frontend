@@ -94,16 +94,13 @@ class TableRowCompoment extends Component {
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         const isSelectedCurrent =
             this.props.selected.findIndex((value) => {
-                return value === this.props.file;
+                return value.id === this.props.file.id;
             }) !== -1;
         const isSelectedNext =
             nextProps.selected.findIndex((value) => {
-                return value === this.props.file;
+                return value.id === this.props.file.id;
             }) !== -1;
-        if (
-            nextProps.selected !== this.props.selected &&
-            isSelectedCurrent === isSelectedNext
-        ) {
+        if (isSelectedCurrent === isSelectedNext) {
             return false;
         }
 
@@ -129,7 +126,7 @@ class TableRowCompoment extends Component {
         }
         const isSelected =
             this.props.selected.findIndex((value) => {
-                return value === this.props.file;
+                return value.id === this.props.file.id;
             }) !== -1;
         const isMobile = statusHelper.isMobile();
 

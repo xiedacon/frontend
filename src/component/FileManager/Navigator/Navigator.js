@@ -32,12 +32,12 @@ import DropDown from "./DropDown";
 import pathHelper from "../../../utils/page";
 import classNames from "classnames";
 import Auth from "../../../middleware/Auth";
-import Avatar from "@material-ui/core/Avatar";
 import { Archive } from "@material-ui/icons";
 import { FilePlus } from "mdi-material-ui";
 import SubActions from "./SubActions";
 import { setCurrentPolicy } from "../../../redux/explorer/action";
 import { list } from "../../../services/navigate";
+import { listDataRefreshInterval } from "../../../config";
 import { withTranslation } from "react-i18next";
 
 const mapStateToProps = (state) => {
@@ -141,6 +141,7 @@ class NavigatorComponent extends Component {
         anchorEl: null,
         hiddenMode: false,
         anchorHidden: null,
+        stop: null,
     };
 
     constructor(props) {
@@ -169,16 +170,39 @@ class NavigatorComponent extends Component {
     };
 
     renderPath = (path = null) => {
+        const stop = this.refreshListData(
+            path !== null ? path : this.props.path
+        );
+        if (this.state.stop) {
+            this.state.stop();
+        }
+
         this.props.setNavigatorError(false, null);
         this.setState({
             folders:
                 path !== null
                     ? path.substr(1).split("/")
                     : this.props.path.substr(1).split("/"),
+            stop,
         });
-        const newPath = path !== null ? path : this.props.path;
+
+        this.checkOverFlow(true);
+    };
+
+    refreshListData = (path) => {
+        const id = setInterval(
+            () => this.listData(path),
+            listDataRefreshInterval
+        );
+        this.listData(path);
+        return () => {
+            clearInterval(id);
+        };
+    };
+
+    listData = (path) => {
         list(
-            newPath,
+            path,
             this.props.share,
             this.search ? this.search.keywords : "",
             this.search ? this.search.searchPath : ""
@@ -188,7 +212,7 @@ class NavigatorComponent extends Component {
                 this.props.updateFileList(response.data.objects);
                 this.props.setNavigatorLoadingStatus(false);
                 if (!this.search) {
-                    setGetParameter("path", encodeURIComponent(newPath));
+                    setGetParameter("path", encodeURIComponent(path));
                 }
                 if (response.data.policy) {
                     this.props.setCurrentPolicy({
@@ -203,8 +227,6 @@ class NavigatorComponent extends Component {
             .catch((error) => {
                 this.props.setNavigatorError(true, error);
             });
-
-        this.checkOverFlow(true);
     };
 
     redresh = (path) => {
@@ -227,6 +249,9 @@ class NavigatorComponent extends Component {
 
     componentWillUnmount() {
         this.props.updateFileList([]);
+        if (this.state.stop) {
+            this.state.stop();
+        }
     }
 
     componentDidUpdate = (prevProps, prevStates) => {

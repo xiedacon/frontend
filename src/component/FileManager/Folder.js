@@ -85,7 +85,7 @@ export default function Folder({ folder, isActive, onIconClick }) {
     const isMobile = statusHelper.isMobile();
     const isSelected =
         selected.findIndex((value) => {
-            return value === folder;
+            return value.id === folder.id;
         }) !== -1;
 
     return (

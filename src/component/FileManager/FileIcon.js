@@ -147,16 +147,13 @@ class FileIconCompoment extends Component {
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         const isSelectedCurrent =
             this.props.selected.findIndex((value) => {
-                return value === this.props.file;
+                return value.id === this.props.file.id;
             }) !== -1;
         const isSelectedNext =
             nextProps.selected.findIndex((value) => {
-                return value === this.props.file;
+                return value.id === this.props.file.id;
             }) !== -1;
-        if (
-            nextProps.selected !== this.props.selected &&
-            isSelectedCurrent === isSelectedNext
-        ) {
+        if (isSelectedCurrent === isSelectedNext) {
             return false;
         }
 
@@ -167,7 +164,7 @@ class FileIconCompoment extends Component {
         const { classes } = this.props;
         const isSelected =
             this.props.selected.findIndex((value) => {
-                return value === this.props.file;
+                return value.id === this.props.file.id;
             }) !== -1;
         const isSharePage = pathHelper.isSharePage(
             this.props.location.pathname
