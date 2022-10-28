@@ -123,14 +123,14 @@ export const sortMethodFuncs: Record<SortMethod, SortFunc> = {
         return a.name.localeCompare(
             b.name,
             navigator.languages[0] || navigator.language,
-            { numeric: true, ignorePunctuation: true }
+            { ignorePunctuation: true }
         );
     },
     nameRev: (a: CloudreveFile, b: CloudreveFile) => {
         return b.name.localeCompare(
             a.name,
             navigator.languages[0] || navigator.language,
-            { numeric: true, ignorePunctuation: true }
+            { ignorePunctuation: true }
         );
     },
     timePos: (a: CloudreveFile, b: CloudreveFile) => {
