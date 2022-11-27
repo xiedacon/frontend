@@ -15,6 +15,7 @@ import {
 } from "../../redux/explorer";
 import Auth from "../../middleware/Auth";
 import { useTranslation } from "react-i18next";
+import { intersectionBy } from "lodash";
 
 let totalProgressCollector = null;
 let lastProgressStart = -1;
@@ -81,7 +82,7 @@ export default function Uploader() {
                 uploaders = uploaders.filter((u) => u.key() !== original.key());
             }
 
-            return [...uploaders, ...tasks];
+            return intersectionBy([...tasks, ...uploaders], (u) => u.key());
         });
     };
 

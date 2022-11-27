@@ -107,7 +107,7 @@ const sorters = {
 
 const filters = {
     default: (u) => true,
-    ongoing: (u) => u.status < Status.finished,
+    ongoing: (u) => u.status !== Status.finished,
 };
 
 export default function TaskList({
@@ -127,7 +127,7 @@ export default function TaskList({
     const path = useSelector((state) => state.navigator.path);
     const [expanded, setExpanded] = useState(true);
     const [useAvgSpeed, setUseAvgSpeed] = useState(
-        Auth.GetPreferenceWithDefault("use_avg_speed", true)
+        Auth.GetPreferenceWithDefault("use_avg_speed", false)
     );
     const [anchorEl, setAnchorEl] = useState(null);
     const [filter, setFilter] = useState(

@@ -153,7 +153,6 @@ export default function UploadButton(props) {
                         <SpeedDialAction
                             key="UploadFile"
                             icon={<PublishIcon />}
-                            tooltipOpen
                             tooltiptitle={t("uploadFiles")}
                             onClick={() => uploadClicked()}
                             title={t("uploadFiles")}
@@ -163,7 +162,6 @@ export default function UploadButton(props) {
                         <SpeedDialAction
                             key="UploadFolder"
                             icon={<FolderUpload />}
-                            tooltipOpen
                             tooltiptitle={t("uploadFolder")}
                             onClick={() =>
                                 props.selectFile(path, SelectType.Directory)
@@ -174,7 +172,6 @@ export default function UploadButton(props) {
                     <SpeedDialAction
                         key="NewFolder"
                         icon={<CreateNewFolderIcon />}
-                        tooltipOpen
                         tooltiptitle={t("newFolder")}
                         onClick={() => OpenNewFolderDialog()}
                         title={t("newFolder")}
@@ -182,7 +179,6 @@ export default function UploadButton(props) {
                     <SpeedDialAction
                         key="NewFile"
                         icon={<FilePlus />}
-                        tooltipOpen
                         tooltiptitle={t("newFile")}
                         onClick={() => OpenNewFileDialog()}
                         title={t("newFile")}
